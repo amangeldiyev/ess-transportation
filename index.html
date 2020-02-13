@@ -13,6 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/fomantic-ui@2.8.3/dist/semantic.min.css">
 	<script src="https://unpkg.com/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
 
+	<!-- Moment JS -->
+	<script src="./moment.min.js"></script>
+
 </head>
 
 <body>
@@ -119,42 +122,7 @@
 					</div>
 
 				</div>
-				<!-- <div class="ui vertical fluid menu">
-					<div class="item">
-					  <div class="header">Taxi Service</div>
-					  <div class="menu">
-						<a class="item">Enterprise</a>
-						<a class="item">Consumer</a>
-					  </div>
-					</div>
-					<div class="item">
-					  <div class="header">Bus Service</div>
-					  <div class="menu">
-						<a class="item">Rails</a>
-						<a class="item">Python</a>
-						<a class="item">PHP</a>
-					  </div>
-					</div>
-					<div class="item">
-					  <div class="header">Maintenance</div>
-					  <div class="menu">
-						<a class="item">Shared</a>
-						<a class="item">Dedicated</a>
-					  </div>
-					</div>
-					<div class="item">
-					  <div class="header">RTG</div>
-					  <div class="menu">
-						<a class="item">E-mail Support</a>
-						<a class="item">FAQs</a>
-					  </div>
-					</div>
-					<div class="item">
-					  <div class="menu">
-						<a class="item">Contacts</a>
-					  </div>
-					</div>
-				</div> -->
+
 			</div>
 			<div class="eleven wide column">
 
@@ -224,8 +192,8 @@
 			</div>
 			<div class="two wide column">
 				<div class="ui small olive statistic">
-					<div class="value">
-						2,204
+					<div class="value" id="days-without-incident">
+						
 					</div>
 					<div class="label">
 						Days without <br>incident
@@ -306,12 +274,7 @@
 		</div>
 	</div>
 
-	<script>
-		$('.ui.dropdown').dropdown()
-		$('.progress').progress({
-			label: 'ratio',
-		});
-	</script>
+	<script src="./script.js"></script>
 </body>
 
 </html>
