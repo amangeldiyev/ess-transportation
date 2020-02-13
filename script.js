@@ -4,6 +4,9 @@ $('.progress').progress({
     label: 'ratio',
 })
 
+$('.ui.checkbox').checkbox()
+
+
 var last_incident = moment("2016-01-01", "YYYY-MM-DD", true)
 var days_without_incident = moment().diff(last_incident, 'days')
 
