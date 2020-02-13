@@ -124,7 +124,7 @@
                 </div>
 
             </div>
-            <div class="eleven wide column">
+            <div class="ten wide column">
 
                 <div class="ui segment">
                     <div class="ui top attached large label">
@@ -139,14 +139,26 @@
 
                     <div class="ui hidden divider"></div>
 
-                    <select class="ui dropdown">
-                        <option value="">Location</option>
-                        <option value="1">Atyrau</option>
-                        <option value="2">Tengiz</option>
-                        <option value="3">Kulsary</option>
+                    <select class="ui dropdown" onchange="filter(event)" id="location-dropdown">
+                        <option value="tengiz">Tengiz</option>
+                        <option value="atyrau">Atyrau</option>
+                        <option value="kulsary">Kulsary</option>
                     </select>
 
-                    <table class="ui striped celled table">
+                    <select class="ui dropdown" onchange="showTable(event)" id="route-dropdown">
+                        <option value="0">Shanyrak-TCOV-IB</option>
+                        <option value="1">Tengiz Route 2</option>
+                        <option value="2">Tengiz Route 3</option>
+                    </select>
+
+                    <table class="ui striped celled very compact table" id="tengiz-0">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Shanyrak-TCOV-IB
+                                </th>
+                            </tr>
+                        </thead>
                         <thead>
                             <tr>
                                 <th>Shanyrak</th>
@@ -250,41 +262,937 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="ui striped celled very compact table" id="tengiz-1">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Tengiz Route 2
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ui striped celled very compact table" id="tengiz-2">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Tengiz Route 3
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Atyrau Route Tables -->
+                    <table class="ui striped celled very compact table" id="atyrau-0">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Atyrau Route 1
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ui striped celled very compact table" id="atyrau-1">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Atyrau Route 2
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ui striped celled very compact table" id="atyrau-2">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Atyrau Route 3
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Kulsary Route Tables -->
+                    <table class="ui striped celled very compact table" id="kulsary-0">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Kulsary Route 1
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ui striped celled very compact table" id="kulsary-1">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Kulsary Route 2
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="ui striped celled very compact table" id="kulsary-2">
+                        <thead>
+                            <tr>
+                                <th colspan="5">
+                                    Kulsary Route 3
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Destination 1</th>
+                                <th>Destination 2</th>
+                                <th>Destination 3</th>
+                                <th>Destination 4</th>
+                                <th>Destination 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:00</td>
+                                <td>06:10</td>
+                                <td>06:30</td>
+                                <td>06:50</td>
+                                <td>06:55</td>
+                            </tr>
+                            <tr>
+                                <td>07:00</td>
+                                <td>07:10</td>
+                                <td>07:30</td>
+                                <td>07:50</td>
+                                <td>07:55</td>
+                            </tr>
+                            <tr>
+                                <td>08:00</td>
+                                <td>08:10</td>
+                                <td>08:30</td>
+                                <td>08:50</td>
+                                <td>08:55</td>
+                            </tr>
+                            <tr>
+                                <td>09:00</td>
+                                <td>09:10</td>
+                                <td>09:30</td>
+                                <td>09:50</td>
+                                <td>09:55</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>10:10</td>
+                                <td>10:30</td>
+                                <td>10:50</td>
+                                <td>10:55</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>11:10</td>
+                                <td>11:30</td>
+                                <td>11:50</td>
+                                <td>11:55</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>12:10</td>
+                                <td>12:30</td>
+                                <td>12:50</td>
+                                <td>12:55</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>13:10</td>
+                                <td>13:30</td>
+                                <td>13:50</td>
+                                <td>13:55</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>14:10</td>
+                                <td>14:30</td>
+                                <td>14:50</td>
+                                <td>14:55</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>15:10</td>
+                                <td>15:30</td>
+                                <td>15:50</td>
+                                <td>15:55</td>
+                            </tr>
+                            <tr>
+                                <td>16:00</td>
+                                <td>16:10</td>
+                                <td>16:30</td>
+                                <td>16:50</td>
+                                <td>16:55</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td>17:10</td>
+                                <td>17:30</td>
+                                <td>17:50</td>
+                                <td>17:55</td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td>
+                                <td>18:10</td>
+                                <td>18:30</td>
+                                <td>18:50</td>
+                                <td>18:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
-            <div class="two wide column">
-                <div class="ui small olive statistic">
-                    <div class="value" id="days-without-incident">
-                        
-                    </div>
-                    <div class="label">
-                        Days without <br>incident
-                    </div>
-                </div>
+            <div class="three wide column">
+                <div class="ui segment">
+					<div class="ui olive statistic">
+						<div class="value" id="days-without-incident">
+							
+						</div>
+						<div class="label">
+							Days without <br>incident
+						</div>
+					</div>
+				</div>
 
 
-                <h6 class="ui dividing header">
-                    Taxi requests for<br> last month
-                </h6>
-                <div class="ui small teal progress" data-percent="74" id="example1">
-                    <div class="bar">
-                        <div class="progress">74</div>
-                    </div>
-                    <div class="label">Atyrau</div>
-                </div>
-                <div class="ui small progress" data-percent="42" id="example2">
-                    <div class="bar">
-                        <div class="progress">42</div>
-                    </div>
-                    <div class="label">Tengiz</div>
-                </div>
-                <div class="ui small yellow progress" data-percent="65" id="example3">
-                    <div class="bar">
-                        <div class="progress">65</div>
-                    </div>
-                    <div class="label">Astana</div>
-                </div>
+				<div class="ui segment">
+					<h6 class="ui dividing header">
+						Taxi requests for last month
+					</h6>
+					<div class="ui small teal progress" data-percent="74" id="example1">
+						<div class="bar">
+							<div class="progress">74</div>
+						</div>
+						<div class="label">Atyrau</div>
+					</div>
+					<div class="ui small progress" data-percent="42" id="example2">
+						<div class="bar">
+							<div class="progress">42</div>
+						</div>
+						<div class="label">Tengiz</div>
+					</div>
+					<div class="ui small yellow progress" data-percent="65" id="example3">
+						<div class="bar">
+							<div class="progress">65</div>
+						</div>
+						<div class="label">Astana</div>
+					</div>
+				</div>
             </div>
         </div>
 
