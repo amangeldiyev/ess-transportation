@@ -6,6 +6,15 @@ $('.progress').progress({
 
 $('.ui.checkbox').checkbox()
 
+$('#rangestart').calendar({
+    endCalendar: $('#rangeend'),
+    ampm: false
+})
+$('#rangeend').calendar({
+    type: 'date',
+    startCalendar: $('#rangestart')
+})
+
 
 var last_incident = moment("2016-01-01", "YYYY-MM-DD", true)
 var days_without_incident = moment().diff(last_incident, 'days')
@@ -47,7 +56,7 @@ function showTable(e) {
 
     var selector = '#' + $('#location-dropdown').val() + '-' + (e ? e.target.value : 0)
 
-    $('table').hide()
+    $('#shuttles-segment table').hide()
     $(selector).show()
 }
 

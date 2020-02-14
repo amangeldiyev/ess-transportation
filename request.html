@@ -68,13 +68,13 @@
 
         <div class="ui grid">
             <div class="three wide column">
-
+            
                 <div class="ui vertical fluid menu">
                     <div class="ui dropdown item">
                         <i class="dropdown icon"></i>
                         Taxi Service
                         <div class="menu">
-                            <a href="./request.html" class="item">Request Taxi</a>
+                            <a class="item">Request Taxi</a>
                             <a class="item">Item 1</a>
                             <a class="item">Item 2</a>
                         </div>
@@ -116,7 +116,7 @@
                             <a class="item">Large</a>
                         </div>
                     </div>
-                    <a class="ui active item">
+                    <a href="./contacts.html" class="ui active item">
                         Contacts
                     </a>
                 </div>
@@ -129,73 +129,143 @@
                         <div class="ui breadcrumb">
                             <a href="./index.html" class="section">Transportation</a>
                             <i class="right angle icon divider"></i>
-                            <div class="section">Contacts</div>
+                            <div class="section">Taxi Service</div>
+                            <i class="right angle icon divider"></i>
+                            <div class="section">Request Taxi</div>
                         </div>
                     </div>
 
                     <div class="ui middle aligned stackable grid container">
                         <div class="row">
                             <div class="ui container">
-                                <table class="ui striped table">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>E-mail</th>
-                                            <th>Phone</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John Lilki</td>
-                                            <td>September 14, 2013</td>
-                                            <td>jhlilk22@yahoo.com</td>
-                                            <td>No</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jamie Harington</td>
-                                            <td>January 11, 2014</td>
-                                            <td>jamieharingonton@yahoo.com</td>
-                                            <td>Yes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jill Lewis</td>
-                                            <td>May 11, 2014</td>
-                                            <td>jilsewris22@yahoo.com</td>
-                                            <td>Yes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>John Lilki</td>
-                                            <td>September 14, 2013</td>
-                                            <td>jhlilk22@yahoo.com</td>
-                                            <td>No</td>
-                                        </tr>
-                                        <tr>
-                                            <td>John Lilki</td>
-                                            <td>September 14, 2013</td>
-                                            <td>jhlilk22@yahoo.com</td>
-                                            <td>No</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jamie Harington</td>
-                                            <td>January 11, 2014</td>
-                                            <td>jamieharingonton@yahoo.com</td>
-                                            <td>Yes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jill Lewis</td>
-                                            <td>May 11, 2014</td>
-                                            <td>jilsewris22@yahoo.com</td>
-                                            <td>Yes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>John Lilki</td>
-                                            <td>September 14, 2013</td>
-                                            <td>jhlilk22@yahoo.com</td>
-                                            <td>No</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <form class="ui form">
+                                    <h4 class="ui dividing header">Information</h4>
+                                    <div class="field">
+                                        <div class="two fields">
+                                            <div class="field">
+                                                <label>Name</label>
+                                                <input type="text" name="name" placeholder="Name">
+                                            </div>
+                                            <div class="field">
+                                                <label>Badge Number</label>
+                                                <input type="text" name="badge_number" placeholder="Badge Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="two fields">
+                                            <div class="field">
+                                                <label>Phone</label>
+                                                <input type="text" name="phone" placeholder="Phone">
+                                            </div>
+                                            <div class="field">
+                                                <label>Cost Center</label>
+                                                <input type="text" name="cc" placeholder="Cost Center">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="two fields">
+                                            <div class="field">
+                                                <label>Company</label>
+                                                <input type="text" name="company" placeholder="Company">
+                                            </div>
+                                            <div class="field">
+                                                <label>Department</label>
+                                                <input type="text" name="department" placeholder="Department">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="two fields">
+                                        <div class="field">
+                                            <label>Project</label>
+                                            <select name="project" class="ui fluid dropdown">
+                                                <option value="">Project</option>
+                                                <option value="1">TCO</option>
+                                                <option value="2">Project 2</option>
+                                                <option value="3">Project 3</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <label>Assignement</label>
+                                            <input type="text" name="assignment" placeholder="Assignment">
+                                        </div>
+                                    </div>
+                                    <div class="two fields">
+                                        <div class="field">
+                                            <label>Destination</label>
+                                            <select name="destination" class="ui fluid dropdown">
+                                                <option value="">Destination</option>
+                                                <option value="1">Atyrau</option>
+                                                <option value="2">Kulsary</option>
+                                            </select>
+                                        </div>
+                                        <div class="field">
+                                            <label>Purpose</label>
+                                            <select name="purpose" class="ui fluid dropdown">
+                                                <option value="">Purpose</option>
+                                                <option value="1">Business</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <h4 class="ui dividing header">Date</h4>
+                                    <div class="two fields">
+                                        <div class="field">
+                                          <label>Start date</label>
+                                          <div class="ui calendar" id="rangestart">
+                                            <div class="ui input left icon">
+                                              <i class="calendar icon"></i>
+                                              <input type="text" placeholder="Start" name="start">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                          <label>End date</label>
+                                          <div class="ui calendar" id="rangeend">
+                                            <div class="ui input left icon">
+                                              <i class="calendar icon"></i>
+                                              <input type="text" placeholder="End" name="end">
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="two fields">
+                                        <div class="field">
+                                            <label>Passenger count</label>
+                                            <input type="text" name="count" placeholder="Count">
+                                        </div>
+                                        <div class="field">
+                                            <div class="ui toggle checkbox">
+                                                <input type="checkbox" name="wait" tabindex="0" class="hidden">
+                                                <label>Wait</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="ui dividing header">Manager</h4>
+                                    <div class="three fields">
+                                        <div class="field">
+                                            <label>Manager name</label>
+                                            <input type="text" name="manager_name" placeholder="Manager name">
+                                        </div>
+                                        <div class="field">
+                                            <label>Manager ID</label>
+                                            <input type="text" name="manager_id" placeholder="Manager ID">
+                                        </div>
+                                        <div class="field">
+                                            <label>Manager email</label>
+                                            <input type="text" name="manager_email" placeholder="Manager Email">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Notes</label>
+                                        <div class="ui left icon input">
+                                            <textarea name="note"></textarea>
+                                            <i class="clipboard outline icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ui secondary button" tabindex="0">Submit</div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
