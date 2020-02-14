@@ -5,6 +5,10 @@
     background-color: darkblue;
 }
 
+#logo {
+    margin-left: 10px;
+}
+
 #secondary-nav {
     border-radius: 0;
     border-top: 1px solid black;
